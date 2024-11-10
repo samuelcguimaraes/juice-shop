@@ -11,11 +11,12 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '18.x'
-      - run: npm ci
+      - run: npm install
       # - run: npm run build --if-present
       # - run: npm test
       
   security:
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
